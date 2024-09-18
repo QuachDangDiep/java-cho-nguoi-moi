@@ -1,10 +1,12 @@
 // alert("Hi javascript world!") Bai 1
 
+
 // var fullName = "Quach Dang Diep"; 
 // var age = 19;
 
 // alert(age);
 // alert(fullName); Bai 2
+
 
 /**
  *  Bai 3
@@ -39,6 +41,7 @@ Giới thiệu về một số hàm built-in
     // }, 2000); Bài 4
 
 
+
     /*
     Giới thiệu về toán tử trong javascript
     1. Toán tử số học - Arithmetic
@@ -65,6 +68,7 @@ Giới thiệu về một số hàm built-in
    // if (a > 0 && b >0) {
    //    alert('a & b đều lớn hơn 0')
    // }; (4) Bai 5
+
 
 
    /* Toán tử số học
@@ -126,9 +130,10 @@ Giới thiệu về một số hàm built-in
    // 7 * 2 - 7 * 2
 
    // 6 + 6
-
+zs
    console.log('output: ', output); Bai 7
    */ 
+
 
    /*
 
@@ -146,8 +151,10 @@ Giới thiệu về một số hàm built-in
 
    a += 2;
    a -= 2;
+
    
    console.log(a); Bai 8*/
+
 
    /*
    Toán tử chuỗi - String operator
@@ -163,6 +170,7 @@ Giới thiệu về một số hàm built-in
    name += 'Diep';
 
    console.log(name) Bai 9*/
+
 
 
    /* Toán tử so sánh 
@@ -190,6 +198,7 @@ Giới thiệu về một số hàm built-in
    }; Bai 10 */
 
 
+
    /*
    Boolean
    */
@@ -201,6 +210,8 @@ Giới thiệu về một số hàm built-in
    // var isSuccess = true;
 
    console.log(isSuccess); Bai 11 */
+
+
 
    /*
    If - else
@@ -222,6 +233,8 @@ Giới thiệu về một số hàm built-in
    } else {
       console.log('Dieu kien sai')
    } Bai 12 */
+
+
 
    /*
    Toán tử logic
@@ -247,6 +260,7 @@ if (!(a < 0)) {
   } Bài 13 */
 
 
+
   /*
   Kiểu dữ liệu trong Javascript
 
@@ -269,6 +283,7 @@ if (!(a < 0)) {
    var c = 1.5;
 
    console.log(typeof a);
+
 
    // String type
    var fullName = 'Dang Diep';
@@ -330,6 +345,7 @@ if (!(a < 0)) {
    console.log('myArray', myArray); Bai 14*/
 
    
+
    /*
    Toán tử so sánh 
     */
@@ -348,6 +364,7 @@ if (!(a < 0)) {
    // var b = 1;
 
    // console.log(a !== b); Bài 15
+
 
 
    /*
@@ -379,6 +396,8 @@ if (!(a < 0)) {
    } else {
       console.log('Dieu kien sai');
    }  bai16*/
+
+
 
    /*
    CHUỖI TRONG JAVASCRIPT
@@ -422,12 +441,11 @@ if (!(a < 0)) {
    // console.log('Toi la: ' + firstName + '' + lastName);
    // console.log(`Toi la: ${firstName} ${lastName}`) Bai17;
 
+
+
    //Làm Việc Với Chuỗi
 
    // var myString = 'Hoc JS tai JS JS F8!';
-
-
-
 
    // 1. length
 
@@ -492,6 +510,7 @@ if (!(a < 0)) {
    // console.log(myString2[10]) Bai 18
 
 
+
    /*
    Kiểu số (Number) trong Javascript
 
@@ -520,7 +539,8 @@ if (!(a < 0)) {
 
    //  1. var otherNumber = new Number(9);
 
-   //   console.log(typeof age) Bai 20
+   //   console.log(typeof age) Bai 19
+
 
 
    /*
@@ -555,7 +575,8 @@ if (!(a < 0)) {
 
    // 1. console.log(typeof languages)
    // console.log(Array.isArray(languages))
-   // console.log(Array.isArray(new Array(1,2))) Bai 21
+   // console.log(Array.isArray(new Array(1,2))) Bai 20
+
 
    /*
    Làm  việc với Array
@@ -574,11 +595,11 @@ if (!(a < 0)) {
 
     */
 
-   var languages = [
-      'javascrpipt',
-      'PHP',
-      'Ruby'
-   ];
+   // var languages = [
+   //    'javascrpipt',
+   //    'PHP',
+   //    'Ruby'
+   // ];
 
    // 1. console.log(languages.toString())
    // 2. console.log(languages.join(' - '))
@@ -590,11 +611,484 @@ if (!(a < 0)) {
    // 5. console.log(languages)
    // 6. console.log(languages.unshift('Dart', 'Diep'))//them phan tu vao dau mang cha ve do dai moi cua mang
    // 6. console.log(languages)
-   languages.splice(1, 1)
-   console.log(languages)
+   // 7. languages.splice(1, 1) // xoa phan tu trong mang
+   // 7. languages.splice(1, 0, 'Dart', '') // chen tu phan tu 1 , 0 xoa phan tu nao, va them Dart
+   // 8. console.log(languages.concat(languages2))// loi 2 thang languages voi nhau
+
+   // 9. console.log(languages.slice(1, 2)) // cat phan tu trong mang Bai 22;
+
 
    
+   /*
+   Hàm (function) trong Javascript
+
+
+   1. Hàm?
+      - Một khối mã
+      -Làm 1 việc cụ thể
+
+   2. Loại hàm
+      -Built-in
+      -Tự định nghĩa
+
+   3. Tính chất
+      - Không thực thi khi định nghĩa
+      - Sẽ thực thi khi được gọi
+      - Có thể nhận tham số
+      - Có thể trả về 1 giá trị
+      
+   4. Tạo hàm đầu tiên 
+    */
    
+   // function showDialog() {
+   //    alert('Hello World');
+   // }
+
+   // showDialog(); Bai 21
+
+
+
+   // Tham số hàm - Javascript cơ bản
+
+   /*
+   1. Tham số?
+      - Định nghĩa?
+      -Kiểu dữ liệu?
+      -Tính private?
+      -1 tham số
+      -Nhiều tham số?
+
+   2. Truyền tham số
+      - 1 tham sô
+      -Nhiều tham số
+   
+   3. Arguments?
+      -Đối tượng arguments
+      -Giới thiệu vòng for   
+    */
+
+   // function writeLog(message, message2, message3) {
+   //    console.log(message)
+
+   //    if (message2, message3){
+   //       console.log(message2)
+   //       console.log(message3)
+   //    }
+   // }
+    // writeLog('Test message', ['java', 'php'], 123);
+   // writeLog('Test message');
+
+   // function writeLog() {
+   //    console.log(arguments)
+   // }
+
+   // writeLog('log1', 'log2', 'log3');
+
+   // function writeLog() {
+   //    var myString = ''
+   //    for (var param of arguments){
+   //       myString += `${param} - `;
+   //    }
+   //    console.log(myString)
+   // }
+
+   // writeLog('log1', 'log2', 'log3'); Bai 22
+
+
+
+   //  Return trong ham - javascript co ban
+
+   // function cong(a, b){
+   //    // return a + b ;
+   //    // return [a, b] ;
+   //    return a. toString() + b. toString();
+   // }
+
+
+   // var result = cong(2, 8);
+
+   // console.log(result);
+
+   // function cong(a, b){
+   //    a + b ;
+   //    console.log('123')
+   //    alert()
+   // }
+
+
+   // var result = cong(2, 8);
+
+   // console.log(result);
+
+   // var isConfirm =  confirm('Message?');
+
+   // console.log(isConfirm); bai25 
+
+
+
+   /*
+   Một số điều cần biết về function
+
+   1. Khi function đặt trùng tên? cái function sau sẽ ghi đè cái function trc
+   2. Khai báo biến trong hàm? Được 
+   3. Định nghĩa hàm trong hàm? Được 
+    */
+   
+   // 1. function showMessage() {
+   //    console.log('Message: 1');
+   // }
+
+   // function showMessage() {
+   //    console.log('Message: 2');
+   // }
+
+   // showMessage();
+
+   
+   // 2. function showMessage(){
+   //    var fullName = 'Dang Diep';
+
+   //    console.log(`Hello, ${fullName}!`);
+   // }
+
+   // showMessage();
+
+   // 3.function showMessage(){
+   //    function showMessage2(){
+   //       console.log('Message: 3');
+   //    }
+   //    showMessage2();
+   // }
+   // showMessage();Bai 26
+
+
+   /*
+   Các loại function
+
+   1. Declaration function
+   2. Expression function
+   3. Arrow function
+    */
+
+   // showMessage2();
+   // function showMessage(){
+   //    console.log('Declaration function')
+   // }
+
+   // var showMessage2 = function(){
+   //    console.log('Expression function')
+   // }
+
+   
+   // setTimeout(function autoLogin(){
+
+   // });
+
+   // var myObject = {
+   //    myfunction: function testName(){
+
+   //    }
+   // } bai27
+
+
+   /*
+   Polyfill?
+    */
+
+   // if(!String.prototype.includes){
+   //    String.prototype.includes = function(search, start){
+   //       'use strict';
+
+   //       if(search instanceof RegExp){
+   //          throw TypeError('First argument must not be a RegExp');
+   //       }
+   //       if(start === undefined) { start = 0; }
+   //       return this.indexOf(search, start) !== -1;
+   //       // return 'javascript course'.indexOf('javascript', 0) !== -1;no se chuyen vao nhu nay
+   //    };
+   // }
+
+   // 'JavaScript course'.includes('javascript', 0); bai 28
+
+
+   // Object trong Javascript
+
+//    var emailKey = 'email';
+
+
+//    var myInfo = {
+//       name: 'Dang Diep',
+//       age : 19,
+//       address: 'Ha Noi, VN',
+//       [emailKey]: 'diep@fulltach.edu.com',
+//       phone: '0987654321',
+//       getName: function(){
+//          return this.name;
+//       },
+//       getName: function(){
+
+//       }
+//    };
+
+
+//    //  function --> Phương thức / method
+//    // Others --> Thuộc tính / property
+
+
+//    // delete myInfo.email;
+
+//    // myInfo.email='diep@gmail.com',
+//    // myInfo['my-email'] = 'diep@gmail.com';
+
+//    // var myKey = 'address';
+
+    
+// console.log(myInfo.getName());
+// console.log(myInfo['address']); bai 29
+
+
+
+// Object constructor 
+
+// function User(firstName, lastName,avatar){
+//    this.firstName = firstName;
+//    this.lastName = lastName;
+//    this.avatar = avatar;
+
+//    this.getFullName = function(){
+//       return `${this.firstName} ${this.lastName}`;
+//    };
+// }
+
+// var author = new User('Diep', 'Dang', 'Avater');
+// var user = new User('Van', 'A', 'Avater');
+
+// author.title = 'Chia se dao tai F8';
+// user.comment = 'lieu co khoa asp.net k ad';
+
+// // console.log(author.constructor === User);
+// // console.log(author.getFullName());
+// // console.log(user.getFullName());
+
+// console.log(author);
+// console.log(user); bai 30
+
+
+
+/* 
+   Object prototype - Basic
+
+   1. Prototype là gì?
+   2. Sử dụng khi nào?
+*/
+
+// function User(firstName, lastName,avatar){
+//       this.firstName = firstName;
+//       this.lastName = lastName;
+//       this.avatar = avatar;
+   
+//       this.getFullName = function(){
+//          return `${this.firstName} ${this.lastName}`;
+//       };
+//    }
+
+//    User.prototype.className = 'F8';
+//    User.prototype.GetClassName = function() {
+//       return this.className;
+//    }
+
+//    var user = new User('Diep', 'Dang', 'Avater');
+//    var user2 = new User('Van', 'A', 'Avater');
+
+//    console.log(user.className);
+//    console.log(user2.GetClassName()); Bai 31
+
+
+
+
+// Đối tượng Date
+
+// var date = Date();
+
+// console.log(date.getFullYear());
+
+// var year = date.getFullYear();
+// var month = date.getMonth() + 1;
+// var day = date.getDate();
+
+// console.log(`${year}/${month}/${day}`);
+
+// javascript date object mozilla Bai 32
+
+
+
+
+// Câu lện rẽ nhánh - If else
+// var date = 2; so sánh tính đúng sai dùng từ 2 chở lên
+
+// if (date === 2){
+//    console.log('Today is Tuesday');
+// } else if (date === 3) {
+//    console.log('Today is Wednesday');
+// } else if (date === 4) {
+//    console.log('Today is Thursday');
+// } else {
+//    console.log('No biet');
+// } Bai 33
+
+
+
+// Câu lệnh rẽ nhánh - Switch
+
+// var date = 2; được cho trước nhưng giá trị dùng từ 3 chở lên 
+
+// switch(date) {
+//    case 2:
+//       console.log('hom nay la thu 2');
+//       break;
+//    case 3:
+//       console.log('hom nay la thu 3');
+//       break;
+//    case 4:
+//       console.log('hom nay la thu 4');
+//       break;
+//    case 5:
+//       console.log('hom nay la thu 5');
+//       break;
+//    default:
+//       console.log('No biet');   
+// }  Bai 34
+
+
+
+/*
+   Toán tử 3 ngôi - Ternary operator
+ */
+
+   // var course = {
+   //    name: 'Javascript',
+   //    coin: 250
+   // } 
+
+   // // if (course.coin > 0) {
+   // //    console.log(`${course.coin} Coins`);
+   // // } else {
+   // //    console.log('Mien phi');
+   // // }
+
+   // var result = course.coin > 0 ? `${course.coin} Coins` : 'Mien phi';
+   // console.log(result);
+
+
+   // var a = 1;
+   // var b = 2;
+
+   // var c = a > 0 ? a : b; Bai35
+    
+
+
+   /*
+      Vòng Lăp - Loop
+
+   1. for - Lặp với điều kiện đúng
+   2. for/in - Lặp qua key cảu đối tượng
+   3. for/of - Lặp qua value của đối tượng
+   4. while - Lặp điều kiện đúng 
+   5. do/while - Lặp ít nhất 1 lần, sau đó lặp khi điều kiện đúng
+   
+   
+    */
+
+
+   // For loop
+
+   // var myArray = [
+   //    'javascript',
+   //    'PHP',
+   //    'Java',
+   //    'Dart',
+   //    'Ruby',
+   //    'Python'
+   // ];
+
+   // // console.log(myArray[2]);
+
+   // var arrayLength = myArray.length;
+
+   // for (var i = 0; i < arrayLength; i++) {
+   //    console.log(myArray[i]);
+   // } phân 1
+
+   
+   //For/in loop
+
+   // var myInfo = {
+   //     name: 'Dang Diep',
+   //     age: 19,
+   //     address: 'Ha Noi, VN'
+   // };
+
+   // for (var key in myInfo) {
+   //     console.log(myInfo[key]);
+   // }
+
+
+   // var myString = 'Javascript';
+
+   // // console.log(myString[0]);
+
+   // var languages = [
+   //    'javascript',
+   //    'PHP',
+   //    'Ruby'
+   // ];
+
+   // for(var key in myString) {
+   //    console.log(myString[key]);
+   //    // console.log(key);
+   // } Phần 2
+
+
+   // For /of loop
+
+   // var languages = 'javascript'
+
+   // var myInfo = {
+   //    name: 'Son Dang',
+   //    age: 19,
+   // };
+
+   // // console.log(Object.keys(myInfo))
+
+   // // console.log(Object.values(myInfo));
+
+   // for (var value of Object.values(myInfo)) {
+   //    console.log(value);
+   // } phần 3
+
+
+   // while loop
+
+   var myArray = [
+      'javascript',
+      'PHP'
+   ]
+
+   var i = 0;
+
+   while (i <= myArray.length){
+      console.log(myArray[i]);
+      i++;
+   }
+
+
+
+
+
+
+
+
+
 
 
    
