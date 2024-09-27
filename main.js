@@ -1069,17 +1069,636 @@ if (!(a < 0)) {
 
    // while loop
 
-   var myArray = [
-      'javascript',
-      'PHP'
-   ]
+   // var myArray = [
+   //    'javascript',
+   //    'PHP',
+   //    'Ruby'
+   // ]
 
-   var i = 0;
+   // var i = 0;
 
-   while (i <= myArray.length){
-      console.log(myArray[i]);
-      i++;
+   // while (i <= myArray.length){
+   //    console.log(myArray[i]);
+   //    i++;
+   // } Phần 4
+
+
+
+   // do/while loop
+
+
+   // var i = 0;
+
+   // do {
+   //    i++;
+
+   //    console.log(i);
+
+   // } while(i < 10);
+
+
+   // var i = 0;
+   // var isSuccess = false;
+
+   // do {
+   //    i++;
+
+   //    console.log('Nạp Thành Công Lần ' + i);
+
+   //    // thanh cong
+   //    if (false) {
+   //       isSuccess = true;
+   //    }
+ 
+   // } while(!isSuccess && i <= 3);  Phần 4
+
+
+   // Break & Continue in loop
+
+   // for (var i = 0; i < 10; i++){
+
+   //    if (i % 2 !== 0){
+   //       continue;
+   //    }
+
+   //    console.log(i);
+
+   //    // if (i >= 5){
+   //    //    break;
+   //    // }
+   // } Phần 5
+
+
+   // Vòng lặp lồng nhau - Nested loop
+
+   // var myArray = [
+   //    [1, 2],
+   //    [3, 4],
+   //    [5, 6]
+   // ];
+
+   // for (var i = 0; i < myArray.length; i++){
+   //    // console.log(myArray[i])
+   //    for (var j = 0; j < myArray[i].length; j++){
+   //       console.log(myArray[i][j]);
+   //    }
+   // } Phần 6
+
+
+   // Loop...
+
+   // for (var i = 100; i > 0; i--) {
+   //    console.log(i);
+   // }
+
+   // for (var i = 0; i <= 100; i += 5){
+   //    console.log(i);
+   // } Phần 7 Bài 36
+
+
+   /*
+   Array methods:
+       forEach()
+       every()
+       some()
+       find()
+       filter()
+       map()
+       reduce()
+   */
+
+   // var course = [
+   //    {
+   //       id: 1,
+   //       name: 'Khai học Javascript',
+   //       coin: 250
+   //    },
+   //    {
+   //       id: 2,
+   //       name: 'HTML, CSS',
+   //       coin: 0
+   //    },
+   //    {
+   //       id: 3,
+   //       name: 'Ruby',
+   //       coin: 0
+   //    },
+   //    {
+   //       id: 4,
+   //       name: 'PHP',
+   //       coin: 400
+   //    },
+   //    {
+   //       id: 5,
+   //       name: 'ReactJS',
+   //       coin: 500
+   //    },
+   // ]
+
+   // course.forEach(function(courses, index) {
+   //    console.log(index, courses);
+   // });// call back  duyệt qua các phần tử của mảng
+
+
+   // var isFree = course.every(function(courses, index) {
+   //    console.log(index);
+   //       return courses.coin === 0;
+   // }); // kiểm tra các phần tử của mảng phải thỏa mãn 1 điều kiện nào đó
+   // console.log(isFree)
+
+
+   // var isFree = course.some(function(courses, index) {
+   //       return courses.coin === 0;
+   // });  // Kiểm tra 1 ông trong mảng thỏa mãn điều kiện đúng thì trả về điều kiện đó
+   // console.log(isFree)
+
+
+   // var courses = course.find(function(course, index) {
+   //    return course.name === 'Ruby';
+   // }); // Nó sẽ lặp qua mỗi phần tử của chúng ta hàm chuyền vào sẽ đc lặp lại và trả về cho ta phương thức
+    //  Nó kiểm tra đến phần tử nào nó ra true và nó gán ngược vào phần tử và kết thúc
+
+   // console.log(courses);
+
+
+   // var listCourses = course.filter(function(course, index) {
+   //    return course.name === 'Ruby';
+   // });  giống find 
+   // console.log(listCourses); Phần 1
+
+
+
+   // function courseHandler(course, ){
+   //    // console.log(course);
+
+   //    // return course.name;
+
+   //    return `<h2>${course.name}</h2>`;
+   //    // return {
+   //    //    id: course.id,
+   //    //    name: `Khoa hoc: ${course.name}`,
+   //    //    coin: course.coin,
+   //    //    coinText: `Gia: ${course.coin}`,
+   //    //    index: index,
+   //    //    originArray: course,
+   //    // };
+   // }
+
+   // var newCourse = course.map(courseHandler);
+   // console.log(newCourse.join('')); phần 2
+
+
+
+   //1. Dễ hiểu
+   //2. Ngắn gọn
+   //3. Hiệu năng
+
+   // // Biến lưu trữ
+   // var totalCoin = 0;
+
+   // // Lặp qua các phần tử
+   // for (var courses of course){
+
+   //    // Thực hiện lưu trữ
+   //    totalCoin += course.coin;
+   // }
+
+   // console.log(totalCoin);
+
+   // var i = 0;
+
+   // function (accumulator, currentValue, ) {
+      // i++; currentIndex, originArray
+
+      // var total = accumulator + currentValue.coin;
+      // console.table({
+      //    'Luot chay: ': i,
+      //    'Bien tich tru: ': accumulator,
+      //    'Gia khoa hoc:' : currentValue.coin,
+      //    'tich chu duoc: ' : total
+      // });
+      // console.log(currentValue);
+
+   //    return accumulator + currentValue;
+   // }
+
+   // var totalCoin = course.reduce(function (accumulator, currentValue, ) {
+   //    return accumulator + currentValue.coin;
+   // }, 0); //initial value
+
+   // console.log(totalCoin);
+   // initial value
+
+   // Hoặc ES6
+
+   // var totalCoin = course.reduce((a,b) =>
+   //    a + b.coin, 0
+   // ); //initial value
+
+   // console.log(totalCoin); Phần 3
+
+   // var i = 0;
+
+   // var totalCoin = course.reduce(function(total, course){
+   //    i++;
+
+   //    // console.log(i, total, course);
+
+   //    return total + course.coin;
+   // }, 0);
+
+   // console.log(totalCoin);
+
+
+   // var numbers = [100, 200, 220, 200, 480];
+
+   // var totalCoin = numbers.reduce(function(total, numbers){
+   //    return total + numbers;
+   // });
+
+   // console.log(totalCoin);
+
+
+   // Bài Tập
+
+   // Bài 1 Flat - "Làm phẳng" mảng từ Depth array - "Mảng sâu"
+
+   // var depthArray = [1, 2, [3, 4], 5, 6, [7, 8, 9]];
+
+   // var flatArray = depthArray.reduce(function(flatOutput, depthItem){
+   //    return flatOutput.concat(depthItem);
+   // }, []);
+
+   // console.log(flatArray);
+
+
+   // Lấy ra các khóa học đưa vào 1 mảng mới
+   // var topics = [
+   //    {
+   //       topic: "Front-end",
+   //       courses: [
+   //          {
+   //             id: 1,
+   //             title: "Html, CSS"
+   //          },
+   //          {
+   //             id: 2,
+   //             title:"JavaScript"
+   //          }
+   //       ]
+   //    },
+   //    {
+   //       topic: "Back-end",
+   //       courses: [
+   //          {
+   //             id: 1,
+   //             title: "Node.js"
+   //          },
+   //          {
+   //             id: 2,
+   //             title: "PHP"
+   //          }
+   //       ]
+   //    }
+   // ];
+
+   // var newCourses = topics.reduce(function (courses, topic){
+   //    return courses.concat(topic.courses);
+   // }, []);
+
+   // console.log(newCourses);
+
+   // var htmls = newCourses.map(function(){
+   //    return `
+   //       <div>
+   //           <h2>${course.title}</h2>
+   //           <p>ID: ${course.id}</p>
+   //       </div>
+   //    `;
+   // });
+
+   // console.log(htmls.join('')); Bai 36
+
+
+   // includes method kiểm tra chuỗi
+
+   // var title = 'Responsive wed design';
+
+   // console.log(title.includes('Responsive', 1));
+
+   // var courses = ['Javascript', 'PHP', 'Dart'];
+
+   // console.log(courses.includes('Javascript')); bài 37
+
+
+   /*
+   Math object
+
+   - Math.PI: Số PI nguyên thủy
+   - Math.round(): Làm tròn số 
+   - Math.abs() : Nhận về giá trị tuyệt đối
+   - Math.ceil() : Làm tròn trên
+   - Math.floor() : Làm tròn dưới
+   - Math.random(): ngẫu nhiên
+   - Math.min()
+   - Math.max()
+
+    */
+
+   // console.log(Math.floor(Math.random()*10));
+
+   // var random = Math.floor(Math.random() * 5);
+
+   // var bonus = [
+   //    '10 coin',
+   //    '20 coin',
+   //    '30 coin',
+   //    '40 coin',
+   //    '50 coin',
+   // ];
+
+   // console.log(bonus[random]);
+
+   // var random = Math.floor(Math.random() * 100);
+
+
+   // if (random < 50){
+   //    console.log('Cuong hoa thanh cong!')
+   // }
+
+   // console.log(Math.max(-100, 1, 90, 50, 40)); Bai 38
+
+
+   /*
+   Callback?
+
+   Là hàm (function) được truyền qua đối số
+   Khi gọi hàm khác
+
+   1. Là hàm
+   2. Được truyền qua đối số
+    */
+
+   // function myFunction(param){
+   //    if(typeof param == 'function'){
+   //       param('Hoc lap trinh')
+   //    }
+   // }
+
+   // function myCallback(value){
+   //    console.log('Value: ', value);
+   // }
+
+   // myFunction(myCallback);
+   // myCallback(123); Bai 39
+
+    
+   /*
+   forEach, find, filter, some, every, reduce
+   (Chữa bài)
+    */
+
+   // var courses = [
+   //    'Javascript',
+   //    'PHP'
+   // ];
+
+   // courses.push('Javascript', 'PHP');
+
+   // courses.length = 10;
+
+   // console.log(courses);
+
+   // for (var i = 0; i < courses.length; i++){
+   //    console.log(courses[i]);
+   // }
+
+   // for (var index in courses){
+   //    console.log(courses[index]);
+   // }
+
+
+   // 1 forEach
+
+   // Array.prototype.forEach2 = function(callback){
+   //    for (var index in this){
+   //       // console.log(index, this.hasOwnProperty(index));
+   //       if(this.hasOwnProperty(index)){
+   //          callback(this[index], index, this);
+   //       }
+   //    }
+   // }
+
+   // var courses = [
+   //    'JavaScript',
+   //    'PHP',
+   //    'Ruby'
+   // ];
+
+   // var courses = new Array(100);
+
+   // courses.push('JavaScript', 'PHP', 'Ruby')
+
+   // courses.length = 1000;
+
+   // console.log(courses);
+
+
+
+
+   // courses.forEach2(function (course, index, array){
+   //    console.log(course, index, array);
+   // });
+
+   // console.log(output);
+
+
+   // 2. filter
+
+   // Array.prototype.filter2 = function(callback){
+   //    var output = [];
+
+   //    for (var index in this){
+   //       if (this.hasOwnProperty(index)){
+   //         var result =  callback(this[index], index, this);
+   //         if(result){
+   //          output.push(this[index]);
+   //         }
+   //       }
+   //    }
+
+   //    return output;
+   // }
+
+   // var courses = [
+   //    {
+   //       name: 'JavaScript',
+   //       coin: 680
+   //    },
+   //    {
+   //       name: 'PHP',
+   //       coin: 450
+   //    },
+   //    {
+   //       name: 'Ruby',
+   //       coin: 520
+   //    },
+   //    {
+   //       name: 'Python',
+   //       coin: 980
+   //    }
+   // ];
+
+   // var filterCourses = courses.filter2(function(course, index, array){
+   //    // console.log(course, index, array);
+   //    return course.coin > 600;
+   // });
+
+   // console.log(filterCourses);
+
+
+   // 3 Some: true/false
+
+   // Array.prototype.some2 = function(callback){
+   //    for (var index in this){
+   //       if (this.hasOwnProperty(index)){
+   //          if (callback(this[index], index ,this)){
+   //             return true;
+   //          };
+   //       }
+   //    }
+   //    return false;
+   // }
+
+   // var courses = [
+   //    {
+   //       name: 'JavaScript',
+   //       coin: 680,
+   //       isPassed: false,
+   //    },
+   //    {
+   //       name: 'PHP',
+   //       coin: 450,
+   //       isPassed: false,
+   //    },
+   //    {
+   //       name: 'Ruby',
+   //       coin: 520,
+   //       isPassed: true,
+   //    },
+   //    {
+   //       name: 'Python',
+   //       coin: 980,
+   //       isPassed: false,
+   //    }
+   // ];
+
+   // var result = courses.some2(function (course, index, array){
+   //    return course.isPassed;
+   // });
+
+   // console.log(result);
+
+
+   //4 .every: true / false
+
+   //  Array.prototype.every2 = function(callback){
+   //    var output = true;
+
+   //    for (var index in this){
+   //       if (this.hasOwnProperty(index)){
+   //          var result = callback(this[index], index, this);
+   //          if(!result){
+   //             output = false;
+   //             break;
+   //          }
+   //       }
+   //    }
+   //    return output;
+   // }
+
+   // var courses = [
+   //    {
+   //       name: 'JavaScript',
+   //       coin: 680,
+   //       isPassed: true,
+   //    },
+   //    {
+   //       name: 'PHP',
+   //       coin: 450,
+   //       isPassed: true,
+   //    },
+   //    {
+   //       name: 'Ruby',
+   //       coin: 520,
+   //       isPassed: false,
+   //    },
+   // ];
+
+   // var result = courses.every2(function (course, index, array){
+   //    return course.coin > 400;
+   // });
+
+   // console.log(result); Bai 40
+
+
+   // Bai van dung $$$$
+   // var array = ['a', 'b', 'c', 'a', 'b', 'c',];
+
+   // console.log([...(new Set(array))]);
+
+
+   /*
+   DeQuy
+   1. Xác định được điểm dừng
+   2. Logic heandle => Tạo ra cái điểm dừng
+    */
+
+   // function deQuy(number){
+   //    if(number < 0){
+   //       //Dungwf
+   //    }
+   //    deQuy();
+   // }
+
+   // function countDown(num){
+   //    if(num > 0){
+   //       console.log(num);
+   //       return countDown(num - 1);
+   //    }
+   //    return num;
+   // }
+   // countDown(10);
+
+   function loop(start, end, callback){
+      if(start < end){
+         return loop(start + 1, end, callback);
+      }
    }
+
+
+
+   var array = ['java', 'Ruby', 'JavaScript'];
+
+   loop(0, array.length - 1, function(index){
+      console.log('index: ', index);
+   });
+
+
+   
+
+
+
+
+
+   
+
+
+
+
+
+
+
 
 
 
