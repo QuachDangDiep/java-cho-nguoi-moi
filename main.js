@@ -1670,19 +1670,151 @@ if (!(a < 0)) {
    // }
    // countDown(10);
 
-   function loop(start, end, callback){
-      if(start < end){
-         return loop(start + 1, end, callback);
-      }
-   }
+   // function loop(start, end, callback){
+   //    if(start <= end){
+   //       callback(start)
+   //       return loop(start + 1, end, callback);
+   //    }
+   // }
 
 
 
-   var array = ['java', 'Ruby', 'JavaScript'];
+   // var array = ['java', 'Ruby', 'JavaScript'];
 
-   loop(0, array.length - 1, function(index){
-      console.log('index: ', index);
-   });
+   // loop(0, array.length, function(index){
+   //    // console.log('index: ', index);
+   //    console.log(array[index]);
+   // });
+
+
+   // vi du 
+
+   // 3 * 2 * 1 = 
+   // 6 * 5 * ... * 1 =
+   
+   // function giaiThua(num){
+   //    var output = 1;
+   //    for(var i = num; i > 0; i--){
+   //       output = output * i;
+   //    }
+   //    return output;
+   // }
+
+   // console.log(giaiThua(5));
+
+   // function giaiThua(number){
+   //    if(number > 0){
+   //       return number * giaiThua(number - 1);
+   //    }
+   //    return 1;
+   // }
+
+   // console.log(giaiThua(6)); Bai 41
+
+   /*
+   HTML DOM
+    */
+
+   // Có 3 thành phần
+
+   /*
+   1. Element: ID, class, tag name, 
+   CSS selector, HTML collection
+
+   2. Attribute
+   3. Text
+    */
+
+   //  Node
+
+
+   // --------------------------------
+
+
+   // 1. Element
+   // Javascript: Browser | Server (Node JS)
+
+   // Browser: HTML -> DOM -> WEB API
+
+   // document.write('Hello world!');
+
+   // var headingNode = document.getElementById('heading'); 1
+
+   // var headingNodes = document.getElementsByClassName('heading'); 2
+
+   // var headingNodes = document.getElementsByTagName('h1') 3
+
+   // var headingNode = document.querySelector('.heading2') 4
+   // var headingNode = document.querySelector('.box .heading2')
+   // var headingNode = document.querySelector('.box .heading2:first-child');
+   // var headingNode = document.querySelector('.box .heading2:nth-child(2)');
+   // var headingNodes = document.querySelectorAll('.box .heading2');
+
+
+   // console.log(headingNodes[0]);
+   // console.log({
+   //    element: headingNodes
+   // });
+
+   // console.log(document.forms.TestForm); 5
+   // console.log(document.anchors);
+   // console.log(document.forms['form-2']);
+   // console.log(document.images); 
+
+
+
+   // ví dụ
+
+   // var listItemNodes = document.querySelectorAll('.box-1 li')
+
+   // console.log(listItemNodes);
+
+   // var boxNodes = document.querySelector('.box-1');
+
+   // Công việc 1 : sử dụng tới 'boxNode'
+   // ...
+   // console.log(boxNodes);
+
+   // Công việc 2: Sử dụng tới các li elements
+   // là con của '.box-1'
+
+   // console.log(boxNodes.querySelectorAll('li'));
+   // console.log(boxNodes.getElementsByTagName('p'));
+   // console.log(boxNodes.querySelector('p'));
+
+
+   /*
+   Ôn lại kiến thức cũ
+
+   1. getElementById:  element
+   2. getElementsByClassName: HTML Collections
+   3. getElementsByTagName: HTML Collections
+   4. querySelector:  element
+   5. querySelectorAll: Node List
+
+
+   6. HTML collection
+   7. document.write
+
+   */
+
+   // var headings = document.querySelectorAll('.heading');
+
+
+   // for(var i = 0; i < headings.length; i++){
+   //    console.log(headings[i]);
+   // }
+
+   // console.log(document.forms);
+
+   // 2. Attribute
+   // 3. Text
+
+
+
+
+
+
 
 
    
