@@ -1711,6 +1711,9 @@ if (!(a < 0)) {
 
    // console.log(giaiThua(6)); Bai 41
 
+
+
+
    /*
    HTML DOM
     */
@@ -1809,6 +1812,87 @@ if (!(a < 0)) {
 
    // 2. Attribute
    // 3. Text
+
+
+
+   // 2. DOM attributes
+
+   // var headingElement = document.querySelector('h1');
+
+   // headingElement.title = 'Title test';
+   // headingElement.setAttribute('data', 'test data');
+   // headingElement.title = 'Title test';
+
+   // console.log(headingElement);
+
+   // headingElement.id = 'Heading';
+   // headingElement.setAttribute('', 'heading') dùng để tạo tên cho ví dụ như class...,
+   // và sau đó đặt tên
+
+   // headingElement.getAttribute('class');
+   // console.log(headingElement.getAttribute('class'));
+   // console.log(headingElement.getAttribute('title'));
+   // alert(headingElement.getAttribute('data'));
+   // alert(headingElement.title);
+   // alert(headingElement.setAttribute());
+
+
+   // 3. DOM text: innerText, textContent
+
+   // var headingElement = document.querySelector('.heading');
+
+   // console.log(headingElement.innerText);
+   // console.log(headingElement.textContent);
+   // in ra dưới console : Getter
+
+
+   // headingElement.innerText = 'New heading';
+   // headingElement.textContent = 'New text';
+   // Thay sửa nội dung thế chữ trong thẻ Text content cũng như vậy: Setter
+
+   // innerText : là chả về viết liền giống những j ta nhìn thấy trên giao diện wed (element node)
+   // TextContent : là chả về nguyên bản (text node)
+
+
+   // innerHTML, outerHTML: thêm thẻ vào element node vào trong HTML
+
+   // var boxElement = document.querySelector('.box');
+
+   // boxElement.innerHTML = '<h2 title = "Heading">New Heading</h2>';
+
+   // console.log(boxElement.innerHTML);
+
+   // boxElement.outerHTML = '<span>Test</span>';
+
+   // console.log(boxElement);
+
+   // console.log(boxElement.outerHTML);
+
+
+   // console.log(document.querySelector('h2').innerText)
+
+   // innerHTML : Lấy element từ bên trong
+   // outerHTML : Lấy element cả ngoài cả trong, ghi đè chính thằng trc
+
+
+   /*
+   Ví dụ :
+    */
+
+   var boxElement = document.querySelector('.box');
+
+   console.log([boxElement]);
+
+   // aria : chỉ để làm chú thích
+   // attributes: chả đối tượng NamedNodeMap (giống array)
+   // auto: liên quan đến edit chỉnh sửa
+
+
+
+
+
+
+
 
 
 
