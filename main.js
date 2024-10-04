@@ -1879,14 +1879,56 @@ if (!(a < 0)) {
    Ví dụ :
     */
 
-   var boxElement = document.querySelector('.box');
+   // var boxElement = document.querySelector('.box');
 
-   console.log([boxElement]);
+   // console.log([boxElement]);
 
    // aria : chỉ để làm chú thích
    // attributes: chả đối tượng NamedNodeMap (giống array)
-   // auto: liên quan đến edit chỉnh sửa
+   // auto: liên quan đến edit chỉnh sửa 
 
+
+   // DOM style 
+
+   // var boxElement = document.querySelector('.box');
+
+   // console.log(boxElement.style);
+   // boxElement.style.width = '100px';
+   // boxElement.style.height = '200px';
+   // boxElement.style.backgroundColor ='red';
+
+   // Object.assign(boxElement.style, {
+   //    width: '100px',
+   //    height: '200px',
+   //    backgroundColor:'green',
+   //    borderRadius: '10px',
+   //    transition: 'all 0.5s ease-in-out'
+   // });
+
+   // console.log(boxElement.style.backgroundColor); //lấy ra thuộc tính css inlike
+
+
+   /*
+     ClassList property
+
+     1. add
+     2. contains
+     3. remove
+     4. toggle
+
+    */
+
+     var boxElement = document.querySelector('.box');
+
+   //   console.log(boxElement.classList.value);
+
+   // boxElement.classList.add('red'); // thêm attribute
+
+   // console.log(boxElement.classList.contains('red')); // Kiểm tra xem thuộc tính có hay không
+
+   // boxElement.classList.remove('red'); // xóa attribute 
+
+   boxElement.classList.toggle('red'); 
 
 
 
