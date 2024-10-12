@@ -1918,7 +1918,7 @@ if (!(a < 0)) {
 
     */
 
-     var boxElement = document.querySelector('.box');
+   //   var boxElement = document.querySelector('.box');
 
    //   console.log(boxElement.classList.value);
 
@@ -1928,10 +1928,215 @@ if (!(a < 0)) {
 
    // boxElement.classList.remove('red'); // xóa attribute 
 
-   boxElement.classList.toggle('red'); 
+   // boxElement.classList.toggle('red'); Bai 42
+
+
+   /*
+   DOM events
+   1. Attribute events
+   2. Assign event using the element node
+    */
+
+   // 2. Assign event using the element node
+   // var h1Element = document.querySelector('h1');
+   // var h1Element = document.querySelectorAll('h1');
+
+
+   // console.log(h1Element);
+   // h1Element.onclick = function(){
+   //    console.log(Math.random());
+   // }
+
+   // for (var i = 0; i < h1Element.length; i++){
+   //    // console.log(h1Element[i]);
+   //    h1Element[i].onclick = function(e){
+   //       console.log(e.target);  
+   //    }
+   // }
+
+   // h1Element.onclick = function(e){
+   //    console.log(e.target);
+   // }
+
+
+   /*
+   DOM events
+
+   1. Input / select ,onchange , oninput
+   2. Key up / dowm
+    */
+
+   // ví dụ 1
+
+   // var inputValue; 
+
+   // var inputElement = document.querySelector('input[type="text"]')
+
+   // inputElement.oninput = function(e){
+   //    // console.log(e.target.value);
+   //    inputValue = e.target.value;
+   // };
+
+
+   // var inputValue;
+
+   // var inputElement = document.querySelector('input[type="checkbox"]')
+
+   // inputElement.onchange = function(e){
+   //    console.log(e.target.checked);
+   // };
+
+
+   // var inputElement = document.querySelector('select');
+
+   // inputElement.onchange = function(e){
+   //    console.log(e.target.value);
+   // };
+
+
+   // ví dụ 2
+
+   // var inputElement = document.querySelector('input[type="text"]');
+
+   // inputElement.onkeyup = function(e){
+   //    // console.log(e.target.value);
+   //    console.log(e.which);
+
+
+   //    switch(e.which){
+   //       case 27: 
+   //       console.log('Exit');
+   //       break;
+   //    }
+
+   // }
+
+
+   // document.onkeydown = function(e){
+   //    // console.log(e.which)
+   //    switch(e.which){
+   //       case 27:
+   //          console.log('Exit');
+   //          break;
+   //       case 13:
+   //          console.log('SEND DATA');
+   //          break;   
+   //    }
+   // }
+
+
+   /*
+   DOM events
+
+   1. preventDefault: Để loại bỏ đi hành vi của trình duyệt
+   2. stopPropagation: Loại bỏ sự kiện nổi bọt
+    */
+
+   // var aElements = document.querySelectorAll('a');
+
+   // // console.log(aElements);
+
+   // for (var i = 0; i < aElements.length; i++){ 1
+   //    aElements[i].onclick = function(e){
+   //       // console.log(e.target.href)
+
+   //       if(!e.target.href.startsWith('https://f8.edu.vn')){
+   //          e.preventDefault();
+   //       }
+
+   //    }
+   // }
+
+
+   // var ulElement = document.querySelector('ul'); 1
+
+   // ulElement.onmousedown = function(e){
+   //    e.preventDefault();
+   // }
+
+
+   // ulElement.onclick = 
+   //     function(e){
+   //       console.log(e.target);
+   //     }
+
+
+   // document.querySelector('div').onclick = 2
+   //     function(){
+   //       console.log('DIV')
+   //     }
+
+   // document.querySelector('button').onclick = 
+   //     function(e){
+   //       e.stopPropagation();
+   //       console.log('Click me!')
+   //     }   Bai 43
 
 
 
+   /*
+   Event listener
+    */
+
+   // 1. Xử lý nhiều việc khi 1 event xảy ra
+   // 2. Lắng nghe / Hủy bỏ lắng nghe
+
+   //1. DOM event
+    
+   // Phần 1
+   // var btn = document.getElementById('btn');
+
+   // // console.log(btn);'
+
+   // btn.onclick = function (){
+   //    console.log('viec 1')
+
+   //    console.log('viec 1')
+
+   //    alert('Viec 3')
+   // }
+
+   // // setTimeout(function (){
+   // //    btn.onclick = function (){
+   // //       console.log('viec 1')
+   
+   // //       console.log('viec 2')
+   
+   // //       alert('Viec 3')
+   // //    }
+   // // },3000);
+
+   // setTimeout(function () {
+   //    btn.onclick = function () {}
+   // },3000);
+
+
+   // Phần 2
+   // var btn = document.getElementById('btn');
+
+   // function viec1(){
+   //    console.log('viec 1');
+   // }
+
+   // function viec2(){
+   //    console.log('viec 2');
+   // }
+
+   // btn.addEventListener('click', viec1);
+   // btn.addEventListener('click', viec2);
+
+
+   // setTimeout(function () {
+   //    btn.removeEventListener('click', viec1);
+   // }, 3000);
+
+   // btn.addEventListener('click', function(e){
+   //    console.log(Math.random())
+   // });
+
+   // btn.addEventListener('click', function(e){
+   //    console.log(Math.random())
+   // });
 
 
 
