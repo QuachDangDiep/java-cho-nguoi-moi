@@ -2075,7 +2075,7 @@ if (!(a < 0)) {
 
 
    /*
-   Event listener
+   1. Event listener
     */
 
    // 1. Xử lý nhiều việc khi 1 event xảy ra
@@ -2138,14 +2138,386 @@ if (!(a < 0)) {
    //    console.log(Math.random())
    // });
 
+   /*
+   2. Json
+
+   1. là 1 định dạng dữ liệu (chuỗi)
+   2. Javasrcipt Object Notation
+   3. JSON: Number, Boolean, Null, Array, Object
+   => Mã hóa / Giải mã
+      Encode/ decode
+      Stringify : Từ Javascript types -> JSON
+      Parse : từ JSON -> Javascript types
+    */
+
+      // var json = '["Javascript","PHP"]';
+      // var json = '{"name":"Dang Diep", "age": 19}';
+
+      // var a = '1';
+      // console.log(JSON.parse(json));
+
+      // var object = JSON.parse(json);
+      // console.log(object);
+
+      // console.log(JSON.stringify({
+      //    name: 'Dang Diep',
+      //    age: 19,
+      //    hobbies: ['Javascript', 'PHP']
+      // }));\
+
+      // console.log(JSON.stringify([
+      //    'javascript',
+      //    'PHP'
+      // ]));
+
+      /*
+      3. Promise: là khái niệm sinh ra để sử lý các thao tác bất đồng bộ
+      và trc khi có promise thì nó có callback nó xảy ra vấn đề là callback hell
+      nó sẽ bị sâu vào khó nhìn code bị dối khó nhìn khó hiểu vì vậy thăng promise
+      này đc sinh ra
+      - để tạo ra 1 promise thì sử dụng từ khóa new new với thằng Promise
+      và chuyền vào 1 executro function và trong đó nhận đc hai tham số
+      dang hàm 1 resolve thao tác sử lý thành công, reject thất bại sử dụng
+      qua thằng .then(khi thành công) và .catch(khi thất bại)
+
+      - Sync: đồng bộ chạy theo luồng đồng bộ
+      - Async: bất đồng bộ chạy không theo luồng
+      - Nỗi đau:
+            - Callback hell
+            - Pyramid of doom
+      - lý thuyết và cách hoạt động của ông đấy
+      + SetTimeout, setInterval, fetch, xmlHTTPRequest,
+      fire reading, request animation frame
+      -thực hành, ví dụ
+
+      - Callback
+       */
+
+      // setTimeout(function(){
+      //    console.log(1)
+      // }, 1000);
+
+      // console.log(2);
+
+      // setTimeout(function() {
+      //    console.log(1);// viect 1
+      //    setTimeout(function() {
+      //       console.log(2);// viect 2
+      //       setTimeout(function() {
+      //          console.log(3);// viect 3
+      //          setTimeout(function() {
+      //             console.log(4);// viect 4
+      //          }, 1000);
+      //       }, 1000);
+      //    }, 1000);
+      // }, 1000);
+      
+      // 1. new Promise
+      // 2. Executor
+
+      // Có 3 chạng thái
+      // 1. Pendding
+      // 2. Fulfilled
+      // 3. Rejected
+      
+      // var promise = new Promise(
+      //    // Executor
+      //    function(resolve, reject){
+            // Logic sử lý
+            // Thành công: resolve()
+            // Thất Bại: reject()
+            // resolve([
+            //    {
+            //       id: 1,
+            //       name: 'Javascript'
+            //    }
+            // ]);
+            // reject('Error!');
+      //       resolve();
+      //    }
+      // );
+
+      // chuỗi
+
+      // promise
+      // .then(function() {
+      //    return new Promise(function(resolve) {
+      //       // setTimeout(resolve, 3000);
+      //       setTimeout(function () {
+      //          resolve([1,2,3]);
+      //       }, 3000)
+      //    });
+      //  })
+      //  .then(function(data) {
+      //    console.log(data);
+         // return 2;
+      //  })
+      //  .then(function(data) {
+      //    console.log(data);
+      //    return 3;
+      //  })
+         //  .then(function(courses) {
+         //    console.log(courses);
+         //  })
+         //  .catch(function(error) {
+         //    console.log(error);
+         //  })
+         //  .finally(function() {
+         //    console.log('Done!');
+         //  });
+
+// function sleep(ms) {
+//    return new Promise(function (resolve){
+//       setTimeout(resolve, ms);
+//    });
+// }
+
+// sleep(1000)
+//    .then(function() {
+//       console.log(1);
+//       return sleep(1000);
+//    })
+//    // .then(function() {
+//    //    console.log(2);
+//    //    return sleep(1000);
+//    // })
+//    .then(function() {
+//       console.log(2);
+//       return new Promise(function(resolve, reject){
+//          reject('Error!');
+//       });
+//    })
+//    .then(function() {
+//       console.log(3);
+//       return sleep(1000);
+//    })
+//    .then(function() {
+//       console.log(4);
+//       return sleep(1000);
+//    })
+//    .catch(function(error) {
+//       console.log(error);
+//    })
 
 
+/*
+1. Promise.resolve
+2. Promise.reject
+3. Promise.all
+
+Thư viện: output luôn luôn là 1 promise
+ */
+
+// var promise = new Promise(function (resolve, reject){
+//    // logic
+//    // resolve('Success!');
+//    // 
+//    reject('Error!');
+// });
+// var promise = Promise.resolve('Success!');
+// var promise = Promise.reject('Error!');
+
+// promise
+// .then(function(result){
+//    console.log('result: ', result);
+// })
+// .catch(function(error){
+//    console.log('error: ', error);
+// })
+
+// var promise1 = new Promise(function (resolve){
+//    setTimeout(function(){
+//       resolve([1]);
+//    },2000);
+// });
+
+// var promise2 = new Promise(function (resolve){
+//    setTimeout(function(){
+//       resolve([2, 3]);
+//    },5000);
+// });
+
+// var promise2 = Promise.reject('Error!');
+// Promise.all([promise1, promise2])
+//     .then(function(result){
+//       //  console.log('result: ', result);
+//       var result1 = result[0];
+//       var result2 = result[1];
+
+//       // return result1.concat(result2);
+//       console.log(result1.concat(result2));
+//     })
+//     .catch(function(error){
+//       console.log('error: ', error);
+//     });
+
+/**
+ *  1. Let, const
+ *  2. Tmeplate Listerals
+ *  3. Multi-line String
+ *  4. Arrow function
+ *  5. Classes
+ *  6. Defaulf parameter values
+ *  7. Destructuring
+ *  8. Rest parameters
+ *  9. Spread
+ *  10. Enhanced object literals
+ *  11. Tagged template literal
+ *  12. Modules
+ */
+
+// 1. Let, const
+// 1. Var / Let, Const: Scope, Hosting ngoài khối block ko truy cập đc trong thì đc
+// 2. Const / Var, Let: Assignment
+// code thuần: Var
+// Babel: Const, Let
+// Khi định nghĩ biến và không gán lại biến đó: Cost
+// Khi định nghĩ biến và gán lại cho nó: Let
+
+// Code block: if else, loop, {}, ...
+
+// if(true){
+//    var course = 'Javascript Basic!'
+// }
+
+// console.log(course)
 
 
+// 4. Arrow function
+
+// function logger(log) {
+//    console.log(log)
+// }
+
+// logger('Message...');
 
 
+// const logger = function(log){
+//    console.log(log);
+// }
+
+// logger('Message...');
 
 
+// const logger = (log) => {
+//    console.log(log);
+// }
+
+// logger('Message...');
+
+// const logger = log => console.log(log);
+
+// logger('Message...');
+
+
+// const sum = (a, b) => a + b;
+
+// console.log(sum(2, 2));
+
+
+// const sum = (a, b) => ({ a: a, b: b})
+
+// console.log(sum(2, 2));
+
+// const course = {
+//    name: 'javascript basic!',
+//    getName: () => {
+//       return this.name;
+//    }
+// }
+
+// console.log(course.getName());
+
+// const Course = function(name, price) {
+//    this.name = name;
+//    this.price = price;
+// }
+
+// const jsCourse = new Course('Javascript', 1000)
+
+// console.log(jsCourse);
+
+
+/*
+   2. Template Listerals
+   3. Multi-line String
+ */
+
+   // 2. Template Listerals
+
+   // const course = 'javascript';
+   // const description = 'Course name: '
+   //     + course;
+
+   // console.log(description)   
+   
+   // const course = 'javascript';
+   // const course2 = 'PHP'
+   // const description = `Course name: ${course} ${course2}`;
+   // const description = `Course name: ${course} \\ ${course2}`;
+   // const description = `Course name: ${course} \n ${course2}`;
+   // const description = `Template String noi suy voi \${}`;
+
+   // console.log(description) 
+
+
+   // 3. Multi-line String
+
+   // const lines ='line 1\n'
+   //     +'line 2\n'
+   //     +'line 3\n'
+   //     +'line 4\n'
+
+   // console.log(lines)
+
+   // const lines = `line 1
+   // line 2
+   // line 3`;
+
+   // console.log(lines)
+
+
+   // 5. Classes
+
+   // function Course(name, price){
+   //    this.name = name;
+   //    this.price = price;
+
+   // this.getName = function(){
+   //    return this.name;
+   // }
+
+   // const isSuccess = false
+   // }
+
+   // class Course {
+   //    constructor(name, price){
+   //       this.name = name;
+   //       this.price = price;
+   //    }
+   //    getName(){
+   //       return this.name;
+   //    }
+
+   //    getPrice(){
+   //       return this.price;
+   //    }
+   //    run(){
+   //       const isSuccess = false;
+
+   //       if(isSuccess){
+   //          console.log('Course has been run successfully');
+   //       } else {
+   //          console.log('Course has not been run successfully');
+   //       }
+   //    }
+   // }
+
+   // const phpCoures = new Course('PHP', 1000);
+   // const jsCoures = new Course('Javascript', 1200);
+
+   // console.log(phpCoures);
+   // console.log(jsCoures);
 
 
    
