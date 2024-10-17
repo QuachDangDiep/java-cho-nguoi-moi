@@ -2353,14 +2353,14 @@ Thư viện: output luôn luôn là 1 promise
 
 /**
  *  1. Let, const
- *  2. Tmeplate Listerals
+ *  2. Template Listerals
  *  3. Multi-line String
  *  4. Arrow function
  *  5. Classes
  *  6. Defaulf parameter values
  *  7. Destructuring
- *  8. Rest parameters
- *  9. Spread
+ *  8. Rest parameters(...)
+ *  9. Spread(...)
  *  10. Enhanced object literals
  *  11. Tagged template literal
  *  12. Modules
@@ -2518,6 +2518,222 @@ Thư viện: output luôn luôn là 1 promise
 
    // console.log(phpCoures);
    // console.log(jsCoures);
+
+
+   // 10. Enhanced object literals
+
+   // 1. Định nghĩa key: value cho object
+   // 2. Định nghĩa method cho object
+   // 3. Định nghĩa key cho object dưới dạng biến
+
+   // var name = 'Javascript'
+   // var price = 1000;
+
+   // var course = {
+   //    name,
+   //    price
+   // };
+
+   // console.log(course);
+
+   // var name = 'Javascript'
+   // var price = 1000;
+
+   // var course = {
+   //    name,
+   //    price,
+   //    getName () {
+   //       return name;
+   //    }
+   // };
+
+   // console.log(course.getName());
+
+   // var fieldName = 'name';
+   // var fieldPrice = 'price';
+
+   // const course = {
+   //    [fieldName]: 'Javascript',
+   //    [fieldPrice]: 1000
+   // };
+
+   // console.log(course);
+   
+
+   // 6. Defaulf parameter values
+
+   // function logger(log = 'Gia tri mac dinh!'){
+      // if(typeof log === 'undefined'){
+      //    log = 'No log provided!';
+      // }
+   //    console.log(log)
+   // }
+
+   // logger(undefined);
+
+   // function logger(log, isAlert = false){
+   //    if(isAlert) return alert(log);
+   //    console.log(log);
+   // }
+   // logger('Message...', true);
+
+   // function logger(log, type = 'log'){
+   //    console[type](log);
+   // }
+   // logger('Message...', 'error');
+
+
+   // 7. Destructuring
+   // 8. Rest parameters
+
+   // var array = ['Javascript', 'PHP', 'Ruby'];
+
+   // var [a, b, c] = array;
+
+   // // var a = array[0];
+   // // var b = array[1];
+   // // var c = array[2];
+
+   // console.log(a, b, c);
+
+
+   // var array = ['Javascript', 'PHP', 'Ruby'];
+
+   // var [a, ...rest] = array;
+
+   // var a = array[0];
+   // var b = array[1];
+   // var c = array[2];
+
+   // console.log(a);
+   // console.log(rest);
+
+   // var course = {
+   //    name: 'Javascript',
+   //    price: 1000,
+   //    image: 'image-address',
+      // children: {
+      //    name: 'ReactJS'
+      // }
+   // };
+
+   // var {name, description = 'Deo co j ca'} = course;
+
+   // console.log(name);
+   // console.log(description);
+
+   // var {name, ...rest} = course;
+   // var {name: param, children: {name}} = course;
+   // console.log(name, price, image);
+   // console.log(name);
+   // console.log(rest);
+
+   // console.log(param);
+   // console.log(name);
+
+
+   // 9. Spread
+   // function logger({ name, price, ...rest}){
+      // console.log(param);
+      // console.log(obj);
+   //    console.log(name);
+   //    console.log(price);
+   //    console.log(rest);
+   // }
+
+   // logger({
+   //    name: 'Javascript',
+   //    price: 1000,
+   //    descripttion: 'Description constructor'
+   // });
+
+
+   // var array = ['Javascript', 'PHP', 'RUBY'];
+
+   // var array2 = ['React', 'Dart'];
+
+   // var array3 = [...array2,...array];
+
+   // console.log(array3);
+
+
+   // var object1 = {
+   //    name: 'Javascript'
+   // };
+
+   // var object2 = {
+   //    price: 1000
+   // };
+
+   // var object3 = {...object1,...object2};
+
+   // console.log(object3);
+
+   // var defaultConfig = {
+   //    api: 'https://Muong-Thanh-Tang2',
+   //    apiVersion: 'v1',
+   //    other: 'other',
+   // }
+
+   // var exarciseConfig = {
+   //    ...defaultConfig,
+   //    api: 'https://Muong-Thanh-Tang4'
+   // }
+
+   // console.log(exarciseConfig);
+
+   // var array = ['JavaScript', 'PHP', 'Ruby', 'Java'];
+
+   // function logger(a, b, c){
+   //    console.log(a, b, c);
+   // }
+
+   // function logger(...rest){
+   //    for(var i = 0; i < rest.length; i++){
+   //       console.log(rest[i]);
+   //    }
+   // }
+
+   // logger(...array);
+
+   // 11. Tagged template literal
+
+   // function highlight([first, ...strings], ...value){
+      // console.log(rest);
+      // console.log('first: ', first);
+      // console.log('String: ', strings);
+      // console.log('Value: ', value);
+
+   //    return value.reduce(
+   //       (acc, curr) => [...acc, `<span>${curr}</span>`, strings.shift()],
+   //       [first]
+   //    )
+   //    .join('');
+   // }
+
+
+
+//    var brand = 'F8';
+//    var course = 'Javascript';
+
+//   const html =  highlight`Hoc lap trinh ${course} tai ${brand}!`;
+
+//   console.log(html);
+
+
+
+   // 12. Modules: Import / Export
+
+   // import logger from './logger/logger.js';
+   // import { logger2 } from './logger/index.js';
+   // import { TYPE_ERROR, TYPE_LOG, TYPE_WARN } from './constants.js';
+   // import * as constants from './constants.js';
+
+   // console.log(constants);
+   // console.log(logger)
+   // logger2('Test message...',constants.TYPE_ERROR);
+
+
 
 
    
