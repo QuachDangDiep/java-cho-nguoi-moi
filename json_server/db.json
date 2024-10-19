@@ -1,0 +1,9 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "name": "Javascript Developer Cho người mới",
+            "description": "Kiến thức cơ bản cho người mới bắt đâu"
+        }
+    ]
+}
