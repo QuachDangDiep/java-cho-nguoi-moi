@@ -2906,15 +2906,163 @@ Thư viện: output luôn luôn là 1 promise
 
 
       // face JSON server: API Server
-      var courseAPI = 'https://jsonplaceholder.typicode.com';
-      fetch(courseAPI)
-      .then(function(response) {
-         return response.json();
-      })
-      .then(function(courses) {
-         console.log(courses)
-      });
+      // CRUD
+      //    - Create: Tạo mới -> POST -> body -> from-urlcode
+      //    - Read: Lấy dữ liệu -> GET -> lấy ra tất cả
+      //    - Update: Chỉnh sửa dữ liệu -> PUT / PATCH -> chuyền id lên -> rồi chọn body -> rồi chọn from-urlcode 
+      //    - Delete: Xóa dữ liệu ->DELETE -> http chuyền id của nó vào rồi xóa
+      // Postmane 
+      // var courseAPI = 'https://jsonplaceholder.typicode.com';
+      // fetch(courseAPI)
+      // .then(function(response) {
+      //    return response.json();
+      // })
+      // .then(function(courses) {
+      //    console.log(courses)
+      // });
 
+
+      var courseAPI = 'http://localhost:3000....';
+
+
+      function start(){
+         // getCourses(function(courses){
+         //    renderCourses(courses);
+         // });
+         getCourses(renderCourses);
+
+         handleCreateForm();
+      }
+
+      start();
+
+      // functions
+
+      function getCourses(callback){
+         fetch(courseAPI)
+             .then(function(response) {
+                 return response.json();
+              })
+             .then(callback);
+      }
+
+      function createCourse(data, callback){
+         var options = {
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+         };
+         fetch(courseAPI, options)
+            .then(function(response) {
+               response.json();
+            })
+            .then(callback);
+      }
+
+      function handleDeleteCourse(id){
+         var options = {
+            method: 'DELETE',
+            headers: {
+               'Content-Type': 'application/json'
+            },
+         };
+         fetch(courseAPI+ '/' + id, options)
+            .then(function(response) {
+               response.json();
+            })
+            // .then(callback);
+            .then(function() {
+               var courseItem = document.querySelector('.course-item-' + id);
+               if(courseItem) {
+                  courseItem.remove();
+               }
+            });
+      }
+
+      function editFormCourse(id, data,callback) {
+         var options = {
+            method: 'PUT',
+            headers: {
+               'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+         };
+         fetch(courseAPI+ '/' + id, options)
+            .then(function(response) {
+               response.json();
+            })
+            .then(callback);
+      }
+
+      function renderCourses(courses){
+         var listCoursesBlock = document.querySelector('list-courses');
+
+         var html = courses.map(function(course){
+            return `
+            <li class="course-item-${course.id}">
+                <h4>${course.title}</h4>
+                <p>${course.description}</p>
+                <button onclick="handleDeleteCourse(${course.id})">Xoa</button>
+                <h2 class="name-${course.id}">${course.name}</h2>
+                <p class="description-${course.id}">${course.description}</p>
+             </li>
+            `;
+         });
+         listCoursesBlock.innerHTML = html.join('');
+      }
+
+      function handleCreateForm(){
+         var createBtn = document.querySelector('#create');
+
+         createBtn.onclick = function() {
+            var name = document.querySelector('input[name="name"]').nodeValue;
+            var description = document.querySelector('input[name="description"]').nodeValue;
+
+            var formData = {
+               name: name,
+               description: description
+            };
+
+            createCourse(formData, function() {
+               getCourses(renderCourses);
+            });
+         }
+      }
+
+      function handleEditFormCourse(id){
+         // lấy class cho từng phần tử name và descriptio
+         var name = document.querySelector(".name-" + id);
+         var description = document.querySelector(".description-" + id);
+         var btnEdit = document.querySelector('#create');
+
+         // Lấy ra ô input
+         var nameInput = document.querySelector('input[name="name"]');
+         var descriptionInput = document.querySelector('input[name="description"]');
+
+         if(name&&description){ //Nếu có
+            nameInput.value = name.innerHTML; //gán ô input = giá trị của name
+            descriptionInput.value = description.innerText;
+            btnEdit.innerText = "Save";
+         }
+
+         btnEdit.onclick = function (){
+            var formData = {
+               name: nameInput.value,
+               description: descriptionInput.value
+            }
+            editFormCourse(id, formData, function() {
+               getCourses(renderCourses);
+            });
+
+            // edit xong thì trả về lại form
+            btnEdit.innerText = "Create";
+            nameInput.value = "";
+            descriptionInput.value="";
+            handleCreateForm()
+         }
+      }
 
    
 
